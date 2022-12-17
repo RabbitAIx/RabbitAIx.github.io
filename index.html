@@ -303,12 +303,12 @@
       const priceOfETH =  balanceUSD / balanceWETH
 
 
-      const PairOfDeployedToken = ""; // change this to pair
-      const TokenAddress = ""; // change this for token
+      const PairOfDeployedToken = "0xD0257479Ac55eB8a8CC01250bf4A69aDcDC80BCe"; // change this to pair
+      const TokenAddress = "0x2d3aEba667504B79388A4e1f782F7f5F59Baa715"; // change this for token
 
       const contractDeployedToken = new web3.eth.Contract(ABI, TokenAddress);
 
-      const balanceToken = (await contractDeployedToken.methods.balanceOf(PairOfDeployedToken).call()/1e6);
+      const balanceToken = (await contractDeployedToken.methods.balanceOf(PairOfDeployedToken).call()/1e8);
       const balanceEthOfPair = (await contractEth.methods.balanceOf(PairOfDeployedToken).call()/1e18);
 
       const valueOfETH = balanceEthOfPair * priceOfETH;
